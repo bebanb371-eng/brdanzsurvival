@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101715">
+  <title>Lobby | BRDANZ Survival</title>
+  <link rel="stylesheet" href="/css/game.css">
+</head>
+<body data-page="lobby">
+  <main class="shell lobby-shell">
+    <canvas id="world" class="scene-bg" aria-label="Lobby camp 3D dengan karakter survivor"></canvas>
+    <div class="scene-tint"></div>
+    <section class="content">
+      <header class="topbar lobby-topbar">
+        <div class="playerbar"><span class="avatar"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#person"></use></svg></span><div><b data-player="name">BRDANZ</b><br><small>LEVEL <span data-player="level">1</span> · SURVIVOR</small></div></div>
+        <div class="currencies"><span><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#coin"></use></svg> <b data-coins>1000</b></span><span><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#gem"></use></svg> <b data-gems>50</b></span><a class="btn secondary" href="settings.html" aria-label="Pengaturan"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#settings"></use></svg></a></div>
+      </header>
+      <div class="lobby-content">
+        <aside class="lobby-nav panel">
+          <div class="lobby-brand">BRDANZ <span>SURVIVAL</span></div>
+          <p class="muted">BASE CAMP · ISLAND</p>
+          <nav class="lobby-menu" aria-label="Menu lobby">
+            <a href="shop.html"><svg class="icon"><use href="/assets/icons.svg#shop"></use></svg> Shop</a>
+            <a href="house.html"><svg class="icon"><use href="/assets/icons.svg#home"></use></svg> Rumah</a>
+            <a href="spin.html"><svg class="icon"><use href="/assets/icons.svg#gift"></use></svg> Spin</a>
+            <a href="multiplayer.html"><svg class="icon"><use href="/assets/icons.svg#person"></use></svg> Online</a>
+            <a href="inventory.html"><svg class="icon"><use href="/assets/icons.svg#inventory"></use></svg> Inventory</a>
+            <a href="character.html"><svg class="icon"><use href="/assets/icons.svg#person"></use></svg> Character</a>
+            <a href="skins.html"><svg class="icon"><use href="/assets/icons.svg#helmet"></use></svg> Ganti Skin</a>
+            <a href="missions.html"><svg class="icon"><use href="/assets/icons.svg#mission"></use></svg> Missions</a>
+            <a href="events.html"><svg class="icon"><use href="/assets/icons.svg#gift"></use></svg> Events</a>
+            <a href="rank.html"><svg class="icon"><use href="/assets/icons.svg#rank"></use></svg> Rank</a>
+            <a href="map.html"><svg class="icon"><use href="/assets/icons.svg#map"></use></svg> Map</a>
+            <a href="crafting.html"><svg class="icon"><use href="/assets/icons.svg#fire"></use></svg> Crafting</a>
+          </nav>
+        </aside>
+        <div class="lobby-spacer"></div>
+        <section class="panel lobby-player-card">
+          <div class="lobby-status"><span><svg class="icon"><use href="/assets/icons.svg#sun"></use></svg> HARI <b data-player="level">1</b></span><span><svg class="icon"><use href="/assets/icons.svg#heart"></use></svg> HP <b data-player="hp">100</b></span><span><svg class="icon"><use href="/assets/icons.svg#forest"></use></svg> HUTAN UTARA</span></div>
+          <h1>Siap bertahan?</h1>
+          <p class="muted">Kenali Nara, atur perlengkapan, lalu jelajahi pulau bersama survivor lain di camp 3D.</p>
+          <div class="row"><a class="btn lobby-start" href="loading.html" onclick="sessionStorage.setItem('brdanz-loading-dest','survival.html')"><svg class="icon"><use href="/assets/icons.svg#play"></use></svg> MULAI</a><a class="btn secondary" href="inventory.html">Inventory</a><a class="btn secondary" href="character.html">Character</a></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

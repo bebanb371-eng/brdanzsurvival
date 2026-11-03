@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Survivor 3D | BRDANZ</title><link rel="stylesheet" href="/css/game.css"></head>
+<body data-page="skins">
+  <main class="shell skin-shell">
+    <canvas id="world" class="scene-bg" aria-label="Preview karakter 3D"></canvas><div class="scene-tint"></div>
+    <section class="content">
+      <header class="topbar"><a class="btn secondary" href="character.html"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#back"></use></svg> Kembali</a><div class="playerbar"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#coin"></use></svg> <b data-coins>1000</b></div></header>
+      <div class="skin-stage panel"><small>PREVIEW KARAKTER 3D</small><h1 id="selected-skin">Rookie</h1><p class="muted">Seret area kosong atau gulir mouse untuk memutar survivor. Skin aktif langsung diterapkan ke model 3D.</p><p id="skin-notice" class="skin-notice" aria-live="polite"></p></div>
+      <div class="grid skin-cards">
+        <article class="card skin-card" data-skin-card="Rookie"><div class="skin-swatch" style="--swatch:#4c5148"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#person"></use></svg></div><h3>Rookie</h3><p>Perlengkapan survivor dasar.</p><button data-select-skin="Rookie">Gunakan</button></article>
+        <article class="card skin-card" data-skin-card="Ranger"><div class="skin-swatch" style="--swatch:#526346"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#helmet"></use></svg></div><h3>Ranger</h3><p>Helm lapangan dan rompi hijau.</p><button data-select-skin="Ranger" hidden>Gunakan</button><button data-unlock-skin="Ranger" data-cost="650">Buka · 650 koin</button></article>
+        <article class="card skin-card" data-skin-card="Shadow"><div class="skin-swatch" style="--swatch:#20242b"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#shadow"></use></svg></div><h3>Shadow</h3><p>Hood, masker, dan perlengkapan gelap.</p><button data-select-skin="Shadow" hidden>Gunakan</button><button data-unlock-skin="Shadow" data-cost="1600">Buka · 1.600 koin</button></article>
+        <article class="card skin-card" data-skin-card="Medic"><div class="skin-swatch" style="--swatch:#777b70"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#medkit"></use></svg></div><h3>Field Medic</h3><p>Rompi medis dan masker lapangan.</p><button data-select-skin="Medic" hidden>Gunakan</button><button data-unlock-skin="Medic" data-cost="900">Buka · 900 koin</button></article>
+        <article class="card skin-card" data-skin-card="Nomad"><div class="skin-swatch" style="--swatch:#866c4d"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#forest"></use></svg></div><h3>Nomad</h3><p>Perlengkapan kulit untuk perjalanan jauh.</p><button data-select-skin="Nomad" hidden>Gunakan</button><button data-unlock-skin="Nomad" data-cost="1300">Buka · 1.300 koin</button></article>
+      </div>
+    </section>
+    <script type="module" src="/js/app.js"></script>
+  </main>
+</body>
+</html>

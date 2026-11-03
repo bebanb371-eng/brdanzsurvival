@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#101715">
+  <title>Survival | BRDANZ</title>
+  <link rel="stylesheet" href="/css/game.css">
+</head>
+<body data-page="survival">
+  <main class="shell game-shell">
+    <canvas id="world" class="scene-bg" aria-label="Dunia survival 3D"></canvas>
+    <div id="damage-flash" class="damage-flash" aria-hidden="true"></div>
+    <header class="content game-top">
+      <div class="playerbar"><span><svg class="icon icon-forest" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#forest"></use></svg></span><b>ISLAND</b> · Hari <span id="day-count">1</span> · <span id="day-clock">09:00</span> · <span id="weather-status" class="weather-status">Cerah</span> · <span id="net-status">Mencari survivor...</span></div>
+      <nav class="row" aria-label="Menu permainan">
+        <button id="sleep-button" class="secondary" title="Tidur di rumah milikmu">Tidur</button>
+        <a class="btn secondary" href="house.html">Rumah</a><a class="btn secondary" href="spin.html">Spin</a>
+        <a class="btn secondary" href="shop.html"><svg class="icon icon-shop" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#shop"></use></svg> Toko</a>
+        <a class="btn secondary" href="inventory.html"><svg class="icon icon-inventory" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#inventory"></use></svg> Tas</a>
+        <a class="btn secondary" href="pause.html">Ⅱ Jeda</a>
+      </nav>
+    </header>
+    <aside class="minimap-panel" aria-label="Minimap">
+      <div class="minimap-heading"><b>SEKTOR ISLAND</b><span id="map-coords">0, 0</span></div>
+      <canvas id="minimap" width="220" height="220" aria-label="Peta kecil posisi pemain"></canvas>
+      <div class="minimap-legend"><span>▲ Kamu</span><span>● Musuh</span><span>⌂ Camp</span></div>
+    </aside>
+    <section class="hud panel" aria-label="Status survival">
+      <div class="hud-heading"><b>STATUS SURVIVAL</b><span>Lv. <span data-player="level">1</span></span></div>
+      <label><svg class="icon icon-heart" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#heart"></use></svg> HP <span data-player="hp">100</span></label><div class="bar hp-bar"><i data-stat="hp"></i></div>
+      <label><svg class="icon icon-food" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#food"></use></svg> Lapar <span data-player="hunger">100</span></label><div class="bar hunger-bar"><i data-stat="hunger"></i></div>
+      <label><svg class="icon icon-waterdrop" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#waterdrop"></use></svg> Haus <span data-player="thirst">100</span></label><div class="bar thirst-bar"><i data-stat="thirst"></i></div>
+      <label><svg class="icon icon-stamina" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#stamina"></use></svg> Stamina <span data-player="stamina">100</span></label><div class="bar stamina-bar"><i data-stat="stamina"></i></div>
+      <div class="quick-consume">
+        <button id="eat-food" class="secondary" title="Makan ransum"><svg class="icon icon-food" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#food"></use></svg> Makan <b data-item="food">0</b></button>
+        <button id="drink-water" class="secondary" title="Minum air"><svg class="icon icon-waterdrop" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#waterdrop"></use></svg> Minum <b data-item="water">0</b></button>
+      </div>
+    </section>
+    <div id="aim-reticle" class="aim-reticle" aria-hidden="true"><i></i></div>
+    <div id="interact-prompt" class="interact-prompt" hidden><kbd>E</kbd><span id="interact-label">Interaksi</span></div>
+    <div class="weapon-dock" aria-label="Pilih senjata">
+      <div class="weapon-caption">SENJATA <small>1—5 ganti · klik aksi/tembak</small></div>
+      <div class="weapon-slots">
+        <button class="weapon-slot active" data-weapon="rifle" aria-label="Senapan serbu"><kbd>1</kbd><span><svg class="icon icon-rifle" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#rifle"></use></svg></span><b>RIFLE</b><small data-ammo="rifle">30</small></button>
+        <button class="weapon-slot" data-weapon="pistol" aria-label="Pistol"><kbd>2</kbd><span><svg class="icon icon-ammo" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#ammo"></use></svg></span><b>PISTOL</b><small data-ammo="pistol">12</small></button>
+        <button class="weapon-slot" data-weapon="sniper" aria-label="Senapan runduk"><kbd>3</kbd><span><svg class="icon icon-sniper" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#sniper"></use></svg></span><b>SNIPER</b><small data-ammo="sniper">5</small></button>
+        <button class="weapon-slot" data-weapon="knife" aria-label="Pisau"><kbd>4</kbd><span><svg class="icon icon-knife" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#knife"></use></svg></span><b>PISAU</b><small>∞</small></button>
+        <button class="weapon-slot" data-weapon="pickaxe" aria-label="Beliung"><kbd>5</kbd><span><svg class="icon icon-pickaxe" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#pickaxe"></use></svg></span><b>BELIUNG</b><small>∞</small></button>
+      </div>
+    </div>
+    <p id="notice" class="game-notice" role="status">WASD bergerak · mouse untuk membidik · Q ganti kamera · E interaksi · F tambang · klik kiri aksi</p>
+    <button id="edit-controls" class="control-editor-toggle secondary" type="button">Atur tombol</button>
+    <div id="joystick" class="joystick" aria-label="Joystick bergerak"><i id="stick-knob"></i></div>
+    <div class="touch-actions">
+      <button id="mobile-run" data-layout-control="run" aria-label="Lari">Lari</button><button id="mobile-jump" data-layout-control="jump" aria-label="Lompat">↑</button>
+      <button id="mobile-use" data-layout-control="use" aria-label="Interaksi">E</button><button id="mobile-mine" data-layout-control="mine" aria-label="Tambang"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#pickaxe"></use></svg></button><button id="mobile-camera" data-layout-control="camera" aria-label="Ganti sudut kamera" title="Ganti sudut kamera · Q"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#camera"></use></svg></button><button id="mobile-fire" data-layout-control="fire" aria-label="Tembak">Tembak</button>
+      <a class="btn secondary" href="pause.html" data-layout-control="pause">Ⅱ</a>
+    </div>
+    <script type="module" src="/js/app.js"></script>
+  </main>
+</body>
+</html>

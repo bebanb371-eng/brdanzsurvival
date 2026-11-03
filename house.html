@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rumah | BRDANZ</title><link rel="stylesheet" href="/css/game.css"></head>
+<body data-page="house"><main class="shell">
+  <canvas id="world" class="scene-bg" aria-label="Camp dan rumah 3D"></canvas><div class="scene-tint"></div>
+  <section class="content"><header class="topbar"><a class="btn secondary" href="lobby.html">← Lobby</a><div class="currencies"><span><svg class="icon"><use href="/assets/icons.svg#coin"></use></svg> <b data-coins>1000</b></span></div></header>
+    <h1>Rumah & Peristirahatan</h1><p class="muted">Beli kabin di pulau, tingkatkan fasilitasnya, lalu tidur di dekat rumah saat malam.</p>
+    <div class="grid house-grid">
+      <article class="card house-card" data-house-card="guardian"><h2>Rumah Penjaga</h2><p>Rumah awal di kamp. Tempat aman untuk memulihkan tenaga.</p><p>Status: <b data-house-status>Dimiliki · Level 1</b></p><button data-house-upgrade="guardian">Tingkatkan</button></article>
+      <article class="card house-card" data-house-card="forest"><h2>Kabin Hutan</h2><p>Kabin kecil di sisi hutan, jauh dari jalan utama.</p><p>Status: <b data-house-status>Belum dimiliki</b></p><button data-house-buy="forest" data-cost="1500">Beli · 1.500 koin</button><button data-house-upgrade="forest" hidden>Tingkatkan</button></article>
+      <article class="card house-card" data-house-card="hill"><h2>Rumah Bukit</h2><p>Rumah batu dan kayu dengan pemandangan lembah.</p><p>Status: <b data-house-status>Belum dimiliki</b></p><button data-house-buy="hill" data-cost="3300">Beli · 3.300 koin</button><button data-house-upgrade="hill" hidden>Tingkatkan</button></article>
+    </div>
+    <div class="panel house-rest"><h2>Beristirahat</h2><p class="muted">Tidur memajukan waktu sampai pagi, memulihkan HP, dan mengurangi persediaan makan serta air.</p><button id="sleep-at-home">Tidur sampai pagi</button><span id="house-notice" class="muted" role="status"></span></div>
+  </section>
+</main><script type="module" src="/js/app.js"></script></body></html>
